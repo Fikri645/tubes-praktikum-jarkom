@@ -37,7 +37,7 @@ def create_response(file_path, method):
 def run_web_server(host, port):
     # Membuat socket TCP
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    # Mengikat socket ke alamat dan port tertentu
+    # Mengikat socket ke alamat dan port yang telah ditentukan
     server_socket.bind((host, port))
     # Menerima koneksi dari client
     server_socket.listen(1)
@@ -49,7 +49,6 @@ def run_web_server(host, port):
         print(f"Koneksi diterima dari {client_address}")
         # Menerima request dari client
         request = client_socket.recv(1024).decode()
-        # print(f"Request:\n{request}")
         method, file_path = parse_request(request)
         response = create_response(file_path, method)
         # Mengirimkan response message ke client
