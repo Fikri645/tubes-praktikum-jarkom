@@ -20,14 +20,15 @@ def parse_request(request):
 def create_response(file_path, method):
     if method == 'GET':
         # Mencari file yang diminta oleh client
-        print(f"File {file_path} terbuka")
         if os.path.exists(file_path):
             with open(file_path, 'r') as file:
                 # Membuat response message dengan header HTTP dan konten file yang diminta
                 response = f"HTTP/1.1 200 OK\n\n{file.read()}"
+            print(f"File {file_path} terbuka")
         else:
             # Membuat response message dengan pesan '404 Not Found'
             response = "HTTP/1.1 404 Not Found\n\n404 Not Found"
+            print(f"File {file_path} Tidak Ditemukan")
     else:
         # Membuat response message dengan pesan '405 Method Not Allowed'
         response = "HTTP/1.1 405 Method Not Allowed\n\n405 Method Not Allowed"
