@@ -1,3 +1,7 @@
+#Kelompok:
+#Muhammad Fikri Wahidin (1301213505)
+#Rashad Izza Andredi (1301213309)
+#Josua Pane (1301210254)
 import socket, os
 
 def parse_request(request):
