@@ -57,6 +57,6 @@ def run_web_server(host, port):
         client_socket.close()
 
 
-# Menjalankan web server dengan host "localhost" dan port 8080
-run_web_server("localhost", 8080)
+# Menjalankan web server dengan host "localhost" dan port 7070
+run_web_server("localhost", 7070)
 
