@@ -52,9 +52,9 @@ def run_web_server(host, port):
 
         # Menerima data dari client (request)
         request = client_socket.recv(1024).decode()
-        # Memecah request menjadi metode dan path file
+        # Memecah request menjadi method dan path file
         method, file_path = parse_request(request)
-        # Membuat respons HTTP berdasarkan path file dan metode
+        # Membuat respons HTTP berdasarkan path file dan method
         response = create_response(file_path, method)
 
         # Mengirim respons ke client
