@@ -9,6 +9,7 @@ def parse_request(request):
     request_parts = request.split()
     file_path = ""
     method = "GET"
+    # Jika request tidak kosong
     if len(request_parts) != 0:
         # Mengambil method dari request
         method = request_parts[0]
@@ -16,10 +17,12 @@ def parse_request(request):
         file_path = request_parts[1][1:] 
         # Jika path file kosong atau mengandung '...', gunakan 'index.html'
         if file_path == '' or file_path == '...':
+            # Menggunakan 'index.html' sebagai default path file
             file_path = 'index.html'
     return method, file_path
 
 def create_response(file_path, method):
+    # Membuat respons HTTP
     if method == 'GET':
         try:
             # Membuka file dengan path yang diberikan
