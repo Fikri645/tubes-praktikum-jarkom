@@ -38,6 +38,8 @@ def create_response(file_path, method):
 
 def run_web_server(host, port):
     # Membuat socket server
+    # AF_INET: Menggunakan IPv4
+    # SOCK_STREAM: Menggunakan TCP
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     # Mengikat socket ke alamat host dan port tertentu
     server_socket.bind((host, port))
